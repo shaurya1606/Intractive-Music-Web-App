@@ -1,14 +1,70 @@
 /* Cursor and Enhanced Bubble Effects */
 .cursor-effect {
-    width: 20px;
-    height: 20px;
-    background: rgba(29, 185, 84, 0.5);
+    width: 35px;
+    height: 35px;
+    background: rgba(29, 185, 84, 0.3);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     mix-blend-mode: difference;
+    backdrop-filter: blur(2px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.cursor-effect.hover {
+    transform: scale(5) !important;
+    background: rgba(29, 185, 84, 0.15);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(29, 185, 84, 0.5);
+    mix-blend-mode: normal;
+}
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    z-index: 9998;
+    animation: sparkleAnim 1.2s linear forwards;
+    background: radial-gradient(circle at center, currentColor 30%, transparent 70%);
+}
+
+@keyframes sparkleAnim {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(360deg) translate(100px, 100px);
+        opacity: 0;
+    }
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    animation: trailFade 0.8s linear forwards;
+    background: radial-gradient(circle at center, currentColor, transparent);
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
 }
 
 .bubble {
@@ -162,5 +218,124 @@
     50% {
         transform: translate(var(--tx), var(--ty));
         opacity: 0.5;
+    }
+}
+
+.mini-project-text {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    opacity: 1;
+}
+
+.mini-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1DB954;
+    transform: translateX(-100vw);
+    animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.project-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #4ECDC4;
+    transform: translateX(100vw);
+    animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.submitted-text {
+    font-size: 24px;
+    color: #fff;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100vw) rotate(-20deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100vw) rotate(20deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add floating animation for Mini Project text */
+.mini-text, .project-text {
+    animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+} 
+
+.music-symbol {
+    position: fixed;
+    font-size: 24px;
+    color: rgba(29, 185, 84, 0.6);
+    pointer-events: none;
+    z-index: 100;
+    animation: musicFloat 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+}
+
+@keyframes musicFloat {
+    0% {
+        transform: translateY(100vh) scale(0.3) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-20vh) scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes musicFall {
+    0% {
+        transform: translateY(-20vh) scale(1) rotate(360deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(120vh) scale(0.3) rotate(720deg);
+        opacity: 0;
     }
 } 

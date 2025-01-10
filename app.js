@@ -813,3 +813,18 @@ async function searchSongs(query) {
 //     console.log(songs);
 // });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const footerSection = document.querySelector('.footer-section');
+    if (footerSection) {
+        observer.observe(footerSection);
+    }
+});
+

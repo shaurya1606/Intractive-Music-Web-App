@@ -850,3 +850,186 @@ body {
 .profile-dropdown.active + .profile-button i {
     transform: rotate(180deg);
 }
+
+.footer-section {
+    margin-top: 100px;
+    position: relative;
+    background: #111111;
+}
+
+.wave-divider {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.footer-content {
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    background: #111111;
+}
+
+.music-symbols {
+    margin-bottom: 30px;
+}
+
+.music-symbols i {
+    font-size: 28px;
+    margin: 0 20px;
+    color: #1DB954;
+    animation: floatIcon 3s infinite ease-in-out;
+}
+
+.developer-info {
+    margin: 40px 0;
+}
+
+.developer-info h3 {
+    color: #1DB954;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.developer {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(29, 185, 84, 0.1);
+    color: #1DB954;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background: #1DB954;
+    color: white;
+    box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+}
+
+.status {
+    margin-top: 30px;
+}
+
+.status-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #4ECDC4;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.status-text i {
+    color: #1DB954;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+/* Add these animations for smooth entrance */
+.footer-section {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-play-state: paused;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add intersection observer to trigger animation */
+.footer-section.visible {
+    animation-play-state: running;
+}
+
+/* Update card styles */
+.song-row, .nav-option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glass effect on hover */
+.song-row:hover, .nav-option:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+}
+
+/* Magnify content inside */
+.song-row:hover img, 
+.nav-option:hover img {
+    transform: scale(1.1);
+}
+
+.song-row:hover .song-info, 
+.nav-option:hover .nav-text {
+    transform: scale(1.02);
+    color: #1DB954;
+}
+
+/* Add shine effect */
+.song-row::before,
+.nav-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.song-row:hover::before,
+.nav-option:hover::before {
+    left: 100%;
+}
