@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist - Sargam</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="artist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo-container">
+            <i class="fas fa-music logo-icon"></i>
+            <h1>Sargam</h1>
+        </div>
+        <ul class="nav-links">
+            <li data-page="home">
+                <i class="fas fa-home"></i>
+                Home
+            </li>
+            <li data-page="search">
+                <i class="fas fa-search"></i>
+                Search
+            </li>
+            <li data-page="library">
+                <i class="fas fa-book"></i>
+                Your Library
+            </li>
+            <li data-page="playlist">
+                <i class="fas fa-plus-square"></i>
+                Create Playlist
+            </li>
+            <li data-page="liked">
+                <i class="fas fa-heart"></i>
+                Liked Songs
+            </li>
+        </ul>
+        <div class="divider"></div>
+        <div class="playlists">
+            <div class="playlist">Playlist #1</div>
+            <div class="playlist">Playlist #2</div>
+            <div class="playlist">Playlist #3</div>
+            <div class="playlist">Playlist #4</div>
+            <div class="playlist">Playlist #5</div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="main">
+            <div class="artist-header">
+                <div class="artist-info">
+                    <img src="../assets/images/artist-cover.jpg" alt="Artist" class="artist-cover">
+                    <div class="artist-details">
+                        <h1 class="artist-name">Artist Name</h1>
+                        <p class="monthly-listeners">Monthly Listeners: 1.5M</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="songs-section">
+                <div class="songs-header">
+                    <div class="song-column-header">#</div>
+                    <div class="song-column-header">TITLE</div>
+                    <div class="song-column-header">ALBUM</div>
+                    <div class="song-column-header">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+                
+                <div class="songs-list">
+                    <!-- Songs will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Same player bar as main page -->
+    <div class="player-bar">
+        <!-- Player content -->
+    </div>
+
+    <script src="../app.js" type="module"></script>
+    <script src="artist.js" type="module"></script>
+</body>
+</html> 

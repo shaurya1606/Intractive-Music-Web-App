@@ -1,0 +1,166 @@
+/* Cursor and Enhanced Bubble Effects */
+.cursor-effect {
+    width: 20px;
+    height: 20px;
+    background: rgba(29, 185, 84, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    mix-blend-mode: difference;
+}
+
+.bubble {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(8px);
+    mix-blend-mode: color-dodge;
+    animation: floatBubble 8s infinite;
+    opacity: 0.12;
+    transition: all 0.5s ease-in-out;
+    will-change: transform, opacity;
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes floatBubble {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translate(50px, -100px) rotate(90deg) scale(1.1);
+    }
+    50% {
+        transform: translate(100px, 0) rotate(180deg) scale(1);
+    }
+    75% {
+        transform: translate(50px, 100px) rotate(270deg) scale(0.9);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg) scale(1);
+    }
+}
+
+/* Add smooth transitions for hover effects */
+.nav-option,
+.playlist-option,
+.song-row {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.intro-text {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    margin: 8px 0;
+    font-size: 32px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+}
+
+.college-text {
+    font-size: 42px;
+    background: linear-gradient(45deg, #1DB954, #4ECDC4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.section-text {
+    font-size: 36px;
+    background: linear-gradient(45deg, #4ECDC4, #1DB954);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.8) rotate(-5deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+.butterfly {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.intro-screen.fade-out {
+    animation: fadeOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(20px);
+    }
+}
+
+.floating-particle {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.8), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatParticle 3s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0.5;
+    }
+} 

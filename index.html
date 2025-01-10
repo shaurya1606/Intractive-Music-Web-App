@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body oncontextmenu="return false;">
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sidebar">
+        <div class="logo-container">
+            <i class="fas fa-music logo-icon"></i>
+            <h1>Sargam</h1>
+        </div>
+        <ul class="nav-links">
+            <li class="active" data-page="home">
+                <i class="fas fa-home"></i>
+                Home
+            </li>
+            <li data-page="search">
+                <i class="fas fa-search"></i>
+                Search
+            </li>
+            <li data-page="library">
+                <i class="fas fa-book"></i>
+                Library
+            </li>
+            <li data-page="liked-songs">
+                <i class="fas fa-heart"></i>
+                Liked Songs
+            </li>
+            <li data-page="playlists">
+                <i class="fas fa-list"></i>
+                Playlists
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for songs, artists, or albums">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="user-controls">
+                <div class="profile-button" id="profileButton">
+                    <i class="fas fa-user-circle profile-icon"></i>
+                    <span class="username">Shaurya</span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-header">
+                        <i class="fas fa-user-circle dropdown-profile-icon"></i>
+                        <div class="dropdown-user-info">
+                            <span class="dropdown-username">Shaurya</span>
+                            <span class="dropdown-email">shaurya@example.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-items">
+                        <div class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="dropdown-item logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Pages -->
+        <div class="page home-page active">
+            <h2>Hi Shaurya ! Getting Bored ? <br>I've something for you to listen!</h2>
+            <div class="recently-played"></div>
+                <div class="song-grid"></div>
+            </div>
+            <div class="featured-songs">
+                <h3>Featured Songs</h3>
+                <div class="carousel-container">
+                    <button class="carousel-button prev">❮</button>
+                    <div class="carousel-track-container">
+                        <div class="carousel-track"></div>
+                    </div>
+                    <button class="carousel-button next">❯</button>
+                </div>
+            </div>
+            <div class="top-artists">
+                <h3>Popular Artists</h3>
+                <div class="artist-grid"></div>
+            </div>
+            <div class="top-albums">
+                <h3>Featured Albums</h3>
+                <div class="album-grid"></div>
+            </div>
+            
+            <div class="recommended">
+                <div class="song-grid"></div>
+            </div>
+        </div>
+
+        <div class="page search-page">
+            <div class="search-results">
+                <div class="songs-section">
+                    <h3></h3>
+                    <div class="results-grid"></div>
+                </div>
+                <div class="artists-section">
+                <div class="results-grid"></div>
+                </div>
+                <div class="albums-section">
+                    <h3></h3>
+                    <div class="results-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page library-page">
+            <!-- Library content -->
+        </div>
+
+        <div class="page playlists-page">
+            <!-- Playlists content -->
+        </div>
+    </main>
+
+    <!-- Player Bar -->
+    <div class="player-bar">
+        <div class="now-playing">
+            <img src="default-cover.jpg" alt="Album Cover" class="current-album-art">
+            <div class="track-info">
+                <div class="track-name">Select a song</div>
+                <div class="artist-name">Artist</div>
+            </div>
+        </div>
+        
+        <div class="player-controls">
+            <div class="control-buttons">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward prev-btn"></i>
+                <i class="fas fa-play play-btn"></i>
+                <!-- <i class="fas fa-pause pause-btn hidden"></i> -->
+                <i class="fas fa-step-forward next-btn"></i>
+                <i class="fas fa-redo"></i>
+            </div>
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span class="total-time">0:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal playlist-modal">
+        <!-- Playlist creation/edit modal content -->
+    </div>
+
+    <div class="modal queue-modal">
+        <!-- Queue modal content -->
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script src="app.js" type="module"></script>
+    <script src="animations.js"></script>
+</body>
+</html>

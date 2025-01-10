@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album - Sargam</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="album.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="left-side">
+        <div class="nav">
+            <div class="nav-option" onclick="openMainScreen('main')">
+                <i class="fa-solid fa-house"></i>
+                <div class="nav-option-text">Home</div>
+            </div>
+            <div class="nav-option" onclick="openMainScreen('search')">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="nav-option-text">Search</div>
+            </div>
+            <div class="nav-option" onclick="openMainScreen('playlist')">
+                <i class="fa-solid fa-bookmark"></i>
+                <div class="nav-option-text">Your Library</div>
+            </div>
+            <div class="nav-option">
+                <i class="fa-solid fa-plus"></i>
+                <div class="nav-option-text">Create Playlist</div>
+            </div>
+            <div class="nav-option">
+                <i class="fa-solid fa-heart"></i>
+                <div class="nav-option-text">Liked Songs</div>
+            </div>
+            <div class="line"></div>
+            <div class="playlist-option">
+                My Playlist #1
+            </div>
+            <div class="playlist-option">
+                My Playlist #2
+            </div>
+            <div class="playlist-option">
+                My Playlist #3
+            </div>
+            <div class="playlist-option">
+                My Playlist #4
+            </div>
+            <div class="playlist-option">
+                My Playlist #5
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="album-header">
+            <div class="album-info">
+                <img src="../assets/images/album-cover.jpg" alt="Album" class="album-cover">
+                <div class="album-details">
+                    <span class="album-type">Album</span>
+                    <h1 class="album-name">Album Name</h1>
+                    <div class="album-meta">
+                        <span class="album-artist">Artist Name</span>
+                        <span class="album-year">2024</span>
+                        <span class="album-songs-count">12 songs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="album-content">
+            <div class="songs-container">
+                <div class="songs-header">
+                    <div class="header-item">#</div>
+                    <div class="header-item">Title</div>
+                    <div class="header-item">Artist</div>
+                    <div class="header-item">Duration</div>
+                </div>
+                <div class="songs-list">
+                    <!-- Songs will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Player Bar -->
+    <div class="player-bar">
+        <div class="now-playing">
+            <img src="../assets/images/default-cover.jpg" alt="Album Cover" class="current-album-art">
+            <div class="track-info">
+                <div class="track-name">Select a song</div>
+                <div class="artist-name">Artist</div>
+            </div>
+        </div>
+
+        <div class="player-controls">
+            <button class="control-btn prev-btn">
+                <i class="fas fa-backward-step"></i>
+            </button>
+            <button class="control-btn play-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="control-btn next-btn">
+                <i class="fas fa-forward-step"></i>
+            </button>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="../app.js" type="module"></script>
+    <script src="album.js" type="module"></script>
+</body>
+</html> 
