@@ -1,5 +1,5 @@
 # Interactive Music Web App
-
+ 
 Welcome to the **Interactive Music Web App**!  
 This web application is designed to provide users with an enjoyable music listening experience. Easily browse, play, and interact with your favorite tracks right from your browser.
 
